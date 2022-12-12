@@ -3,17 +3,16 @@ import './App.css';
 import NavBar from './components/NavBar'
 import MainPage from './components/MainPage'
 import Map from './components/Map'
-import { Fragment } from 'react';
 
 function App() {
   return (
-    <Fragment>
+    <div>
       <NavBar/>
       <Routes>
       <Route path='/' element={<MainPage/>} />
-      <Route path='/map' element={<Map/>} />
+      <Route path='/submit' element={<Map/>} />
     </Routes>
-    </Fragment>
+    </div>
     
   );
 }
