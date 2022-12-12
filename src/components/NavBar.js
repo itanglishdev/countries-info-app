@@ -1,12 +1,11 @@
-import { Fragment } from "react";
 import { Outlet } from "react-router-dom";
 
 function NavBar() {
   return ( 
-    <Fragment className="nav-bar">
+    <div>
       <p>This is the NavBar</p>
       <Outlet/>
-    </Fragment>
+    </div>
    );
 }
 
