@@ -1,31 +1,25 @@
-import { useState, createContext } from "react";
 
-function MainPage() {
+function MainPage({nameChange}) {
 
   
-  const [nationName, setNationName] = useState('')
-// ? need to fix here
-
-  const NationContext = createContext(nationName)
   
-  
-  function handleName() {
-
-  }
-// !TRYING to put context
   return ( 
     <div className="main-page">
+      <h2>Welcome to get info from nation</h2>
+      <p>Insert the name of the nation you want information from. We have a data base of over 200 nations you can pick from</p>
+      <div className="main-page__form">
       <form action="submit" >
         <label htmlFor="">
-          Insert the nation you are looking for:
+          Insert the nation you are looking for: 
+          <br />
           <input 
           type="text" 
-          value={nationName}
-          onChange={e => setNationName(e.target.value)}
+          onChange={nameChange}
           />
         </label> 
-        <button onClick={handleName}>GO!</button>
+        <button >GO!</button>
       </form>
+      </div>
     </div>
    );
 }

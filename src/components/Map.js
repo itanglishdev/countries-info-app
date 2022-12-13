@@ -1,7 +1,17 @@
 import GoogleMapReact from 'google-map-react';
 import ShowNation from './ShowNation'
+import BackButton from './BackButton';
 
-function Map() {
+function Map({nationName}) {
+
+  /** nationName info are used as
+   * defaultProps = {
+   * center: {
+   * lat: nationName.lat[0],
+   * lng: nationName.lan[1]},
+   * zoom: toBeSet
+   * } */
+
   const defaultProps = {
     center: {
       lat: 10.99835602,
@@ -12,16 +22,16 @@ function Map() {
 
 
   return ( 
-    <div style={{ height: '100vh', width: '100%' }}>
+    <div className='map'>
+        <BackButton/>
+
       <GoogleMapReact
         bootstrapURLKeys={{ key: "" }}
         defaultCenter={defaultProps.center}
+        // ? lat and lan come out as nationName.lat[0] and nationName.lan[1]
         defaultZoom={defaultProps.zoom}
       >
         <ShowNation 
-        // values to add through context from picked nation
-        // lat={59.955413}
-        // lng={30.337844}
         />
       </GoogleMapReact>
     </div>
